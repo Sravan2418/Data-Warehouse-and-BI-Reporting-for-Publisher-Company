@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_store
+    description: Stores Dimension. One row per store
+    columns:
+      - name: storekey
+        description: The surrogate key of the store
+        tests:
+          - not_null
+          - unique
+      - name: storeid
+        description: The business / source key of the store
+        tests:
+          - not_null
+          - unique

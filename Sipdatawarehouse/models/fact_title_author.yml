@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fact_title_author
+    description: title author fact table. Transaction one row per order
+    columns:
+      - name: title_id
+        description: Degenerate dimension for of the title.
+        tests:
+          - not_null
+      - name: authorkey
+        description: Dimension key for dim_authors
+      - name: publisherskey
+        description: Dimension key for dim_publishers
+      - name: au_ord
+        description: Degenerate dimension for of the title author
+      - name: royaltyper
+        description: Degenerate dimension for of the title author
+      - name: type
+        description: Degenerate dimension for of the title
+      - name: royalty
+        description: Degenerate dimension for of the title
+      - name: totalsalesrevenue
+        description: price * ytd_sales
+      - name: effectiveroyaltyearned
+        description: (royaltyper / 100) * price * ytd_sales
+      - name: netearnings
+        description: royalty * ytd_sales / 100) - advance
+      - name: price
+        description: additive fact for price of titles
+      - name: ytd_sales
+        description: additive fact for ytd_sales sold on titles
+      - name: pubdatekey
+        description: Degenerate dimension for of the titleauthor.

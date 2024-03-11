@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_publishers
+    description: Publishers Dimension. One row per publisher
+    columns:
+      - name: publisherskey
+        description: The surrogate key of the Publishers
+        tests:
+          - not_null
+          - unique
+      - name: pub_id
+        description: The business / source key of the Publishers
+        tests:
+          - not_null

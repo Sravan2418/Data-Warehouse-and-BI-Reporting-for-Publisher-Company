@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_title_author
+    description: The order fulfillment fact table combined with all of its outrigger dimensions into one bit table. Transaction fact table with one row per order does not include product.

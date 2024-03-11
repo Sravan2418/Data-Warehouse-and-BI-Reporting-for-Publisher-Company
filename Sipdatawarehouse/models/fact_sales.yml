@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Order level fact table. Transaction one row per order 
+    columns:
+      - name: OrderId
+        description: Degenerate dimension for of the order.
+        tests:
+            - not_null
+      - name: titlekey
+        description: Dimension key for dim_titles
+      - name: storekey
+        description: Dimension key for dim_stores
+      - name: discountkey
+        description: Dimension key for dim_discounts
+      - name: quantity
+        description: additive fact for total quantity of titles sold on order
+      - name: discount
+        description: amount of discount
+      - name: income
+        description: quantity * unit price
+      - name: discountedincome
+        description: quantity * (unit price*(1-discount rate))

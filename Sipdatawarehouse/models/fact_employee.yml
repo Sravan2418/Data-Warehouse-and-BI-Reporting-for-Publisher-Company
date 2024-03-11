@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_employee
+    description: Factless fact table. One row per employee 
+    columns:
+      - name: Employeeid
+        description: Degenerate dimension for of the employee.
+        tests:
+            - unique
+            - not_null
+      - name: firstname
+        description: Degenerate dimension for first name
+      - name: lastname
+        description: Degenerate dimension for last name
+      - name: publisherkey
+        description: Dimension key for dim_publishers
+      - name: jobdesc
+        description: Degenerate dimension for job description
+      - name: joblevel
+        description: Degenerate dimension for job level
+      - name: empflg
+        description: additive fact for whether employed or not
+      - name: hiredate
+        description: fact for the date of hire
